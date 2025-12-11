@@ -1,0 +1,424 @@
+*,html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; 
+}
+
+body{
+    background-color: limegreen;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.Logo .nama {
+    font-size: 19px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;   
+}
+
+nav .Logo img {
+    vertical-align: middle;
+}
+
+
+nav {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    align-items: center;
+    position: fixed;  
+    top: 0;           
+    left: 0;
+    width: 100%;      
+    z-index: 1000;
+}
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+nav ul li a {
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(50, 50, 50);
+    font-weight: 600;
+    padding: 8px 0px;
+    transition: all;
+    transition-duration: 300ms;
+    border-bottom: 1px solid transparent;
+}
+nav ul li a:hover {
+    color: #2ecc71;;
+    border-bottom: 1px solid #2ecc71;
+}
+
+.hero {
+    height: 700px;
+    background: linear-gradient(to bottom, #2eb62c,#57c84d,#83d475,#abe098,#c5e8b7);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.hero button {
+    padding: 12px 28px;
+    font-size: 16px;
+    background: #e2ffd7;  
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    color: #333;
+    font-weight: bold;
+    transition: 0.3s;
+    color: #49835e;
+    animation: heart-beats 1s infinite alternate;
+}
+
+@keyframes heart-beats {
+    to {
+        transform: scale(1.1);
+    }
+}
+
+.hero button:hover {
+    background: #49835e;
+    color: #e2ffd7;
+}
+
+.about {
+    padding: 60px 40px;
+    background: linear-gradient(to bottom, #c5e8b7,#abe098,#83d475,#57c84d,#2eb62c);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.about h2 {
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    margin-bottom: 40px;
+    position: relative;
+    animation: fadeDown 1s ease forwards;
+}
+
+@keyframes fadeDown {
+    from { opacity:0; transform:translateY(-30px); }
+    to { opacity:1; transform:translateY(0); }
+}
+
+.about h2::after {
+    content: "";
+    width: 0%;
+    height: 3px;
+    background: #fff;
+    display: block;
+    margin: 10px auto;
+    animation: growLine 1.3s ease forwards;
+}
+
+@keyframes growLine {
+    to { width: 180px; }
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.about-img {
+    width: 380px;
+    border-radius: 500px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+    animation: slideLeft 1.2s ease forwards;
+}
+
+@keyframes slideLeft {
+    from { opacity:0; transform:translateX(-50px); }
+    to { opacity:1; transform:translateX(0); }
+}
+
+
+.about-text {
+    color: white;
+    font-size: 17px;
+    line-height: 1.6;
+    animation: slideUp 1.2s ease forwards;
+}
+
+@keyframes slideUp {
+    from { opacity:0; transform:translateY(40px); }
+    to { opacity:1; transform:translateY(0); }
+}
+
+.school-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    margin-top: 30px;
+    animation: fadeIn 1.2s ease forwards;
+    opacity: 0;
+}
+
+.school-logos img {
+    width: 180px;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.2));
+    transition: transform .3s ease;
+}
+
+.school-logos img:hover {
+    transform: scale(1.08);
+}
+
+/* Animasi */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-info-box {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 20px;
+}
+
+.info-item {
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+    opacity: 0;
+    animation: fadeUp 0.8s forwards;
+}
+.info-item:nth-child(1) { animation-delay: 0.1s; }
+.info-item:nth-child(2) { animation-delay: 0.2s; }
+.info-item:nth-child(3) { animation-delay: 0.3s; }
+.info-item:nth-child(4) { animation-delay: 0.4s; }
+.info-item:nth-child(5) { animation-delay: 0.5s; }
+
+.info-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 8px 18px rgba(0,0,0,0.25);
+}
+
+.info-item h4 {
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #0d6b1b;
+}
+
+.info-item p {
+    font-size: 15px;
+    color: #143d1a;
+}
+
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project {
+    background: linear-gradient(to bottom, #2eb62c,#57c84d,#83d475,#abe098,#c5e8b7);
+    padding: 60px 20px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 1100px;
+}
+
+.project h2 {
+    font-size: 2.5em;
+    color: #ffffff;
+    margin-bottom: 40px;
+    border-bottom: 3px solid #ffffff;
+    display: inline-block;
+    padding-bottom: 10px;
+    animation: fadeDown 1s ease forwards;
+}
+
+@keyframes fadeDown {
+    from { opacity:0; transform:translateY(-30px); }
+    to { opacity:1; transform:translateY(0); }
+}
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 25px;
+    width: 500px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    text-align: left;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgb(35, 194, 215);
+}
+
+.section img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    object-fit: cover;
+    display: block;
+}
+
+.section h3 {
+    font-size: 1.5em;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.section p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project .section:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.project .section:nth-child(3) {
+    animation-delay: 0.4s;
+}
+.project .section:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+@media (max-width: 768px) {
+    .project h2 {
+        font-size: 2em;
+    }
+
+    .project-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+.footer {
+    background: linear-gradient(to top, #2eb62c,#57c84d,#83d475);
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+    margin-top: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    opacity: 0;
+    animation: footerFade 1.2s ease forwards;
+}
+
+@keyframes footerFade {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer-container h3 {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.footer-container p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.footer-links {
+    margin: 20px 0;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #e2ffd7;
+    margin: 0 12px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+    text-shadow: 0px 0px 8px #ffffff;
+}
+
+.footer-copy {
+    font-size: 13px;
+    opacity: 0.7;
+    margin-top: 15px;
+}
